@@ -1,0 +1,151 @@
+/* General Styles */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Ensures the content is vertically centered */
+  justify-content: space-evenly; /* Adds space between the character image and the game content */
+  width: 100%;
+}
+
+body {
+  background-image: url(/public/background-desktop.jpg);
+  background-size: cover; /* Ensures the background image covers the entire screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centers the content vertically */
+  justify-content: space-between; /* Ensures space between the character image and the quiz content */
+  width: 80%; /* You can adjust this value as needed */
+}
+
+.character-container {
+  margin-right: 20px; /* Adds space between the character image and the quiz content */
+}
+
+.character-container img {
+  width: 150px; /* Adjust this value to control the size of the character image */
+  height: auto;
+}
+
+.game-content {
+  flex-grow: 1; /* Ensures the quiz content takes up the remaining space */
+  max-width: 600px; /* You can set a maximum width for the quiz content */
+}
+
+.game-content img {
+  max-width: 100%; /* Ensures the Pokémon image doesn't overflow */
+  height: auto;
+}
+
+form {
+  width: 100%; /* Ensure the form takes full width of its container */
+}
+
+form input,
+form button {
+  width: 100%; /* Ensures both input and button have the same width */
+  padding: 12px; /* Increase padding for better touch interaction */
+  font-size: 16px; /* Adjust font size for readability */
+  margin-top: 10px;
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+form input {
+  margin-bottom: 10px; /* Adds space between the input and the button */
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Media Queries for Mobile and Tablet */
+
+/* Mobile - Adjust for smaller screen widths (less than 600px) */
+@media (max-width: 600px) {
+  .App {
+    flex-direction: column; /* Stack character image and game content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+  }
+
+  .game-container {
+    flex-direction: column; /* Stack the character image and game content vertically */
+    width: 90%; /* Make the container width larger to fill the screen */
+  }
+
+  .character-container {
+    margin-right: 0; /* Remove margin on mobile */
+    margin-bottom: 20px; /* Add margin below the character image */
+  }
+
+  .game-content {
+    width: 100%; /* Make game content take up full width */
+    max-width: none; /* Remove max-width constraint */
+    text-align: center; /* Center the content */
+  }
+
+  .character-container img {
+    width: 120px; /* Make the character image smaller */
+  }
+
+  form input,
+  form button {
+    font-size: 14px; /* Adjust font size */
+    padding: 12px; /* Increase padding for touch devices */
+  }
+}
+
+/* Tablet - Adjust for screen widths between 600px and 900px */
+@media (max-width: 900px) and (min-width: 601px) {
+  .App {
+    flex-direction: row; /* Keep items in a row */
+    justify-content: space-between; /* Ensure spacing between the character image and game content */
+  }
+
+  .game-container {
+    flex-direction: row; /* Keep character image and game content in a row */
+    width: 90%; /* Adjust width */
+  }
+
+  .character-container {
+    margin-right: 20px; /* Keep margin between character image and game content */
+  }
+
+  .game-content {
+    max-width: 500px; /* Adjust the maximum width of the game content */
+  }
+
+  .character-container img {
+    width: 140px; /* Make character image slightly smaller */
+  }
+
+  form input,
+  form button {
+    font-size: 15px; /* Adjust font size for tablets */
+    padding: 10px; /* Adjust padding for tablets */
+  }
+}
+
+/* Larger Desktop (optional) - Adjust for large screen widths (more than 900px) */
+@media (min-width: 901px) {
+  .game-container {
+    width: 80%; /* Default width for larger screens */
+  }
+
+  .character-container img {
+    width: 150px; /* Keep the character image size consistent */
+  }
+
+  form input,
+  form button {
+    padding: 8px 16px; /* Default padding for larger screens */
+  }
+}
